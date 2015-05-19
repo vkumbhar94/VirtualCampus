@@ -8,7 +8,8 @@
 \usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage{cite}
-
+\usepackage{caption}
+\usepackage{subcaption}
 
 \newtcolorbox{stretchbox}[1][]{
   height fill,
@@ -109,7 +110,28 @@ in partial fulfillment of the completion of 5th semester B. Tech. course during 
 
 
 
+%---------------------------------ABBREViATIONS-------------------------
+\newpage
+\begin{center}
+	\LARGE ABBREVIATIONS
+\end{center}
 
+\renewcommand\arraystretch{1.3}
+\renewcommand\tabcolsep{1cm}
+
+
+\begin{tabular}{| l | l |}
+	\hline
+	Abbreviation & Meaning\\
+	\hline
+	AR & Augmented Reality\\
+	NFT & Natural Feature Tracking\\
+	SDK & Software Development Kit\\
+	CV & Computer Vision\\
+	POI & Point of Interest\\
+	ADE & ARchitect Desktop Engine\\
+	\hline
+\end{tabular}
 
 
 
@@ -169,7 +191,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \newpage
 \large
 \section{Introduction}
-\paragraph{ The field of Augmented Reality (AR) has existed for just over one decade, but the growth and progress in the past few years has been remarkable. }
+\par The field of Augmented Reality (AR) has existed for just over one decade, but the growth and progress in the past few years has been remarkable. 
 \subsection{Augmented Reality?}
 \par The basic goal of an AR system is to enhance the users perception of and interaction with the real world through supplementing the real world with 3D virtual objects that appear to coexist in the same space as the real world.  Many recent papers broaden the definition of AR beyond this vision, but in the spirit of the original survey we define AR systems to share the following properties: 
 
@@ -185,10 +207,6 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \subsection{Problem definition}
 \par Think of a situation where we are moving in any new premises of any college and you need to know every single information about that place. So in the conventional method of current scenario we will google the information about the place not so sure we will either can also go to google maps but the problem is the real time scene and infrastructure you are experiencing is way much different than the conventional maps will show you. So this is how you come to a situation where you can use this kind of app which will show you the real time buildings with names and details on your mobile screen.
 
-\subsection{Overview }
-\par VirtualCampus is an android application that is been developed using Wikitude SDK. Wikitude is a mobile augmented reality software which is developed by the Austrian company Wikitude GmbH (formerly Mobilizy GmbH) and was first published in October 2008 as freeware. It displays information about the users' surroundings in a mobile camera view, including image recognition and 3d modeling. Wikitude was the first publicly available application that used a location-based approach to augmented reality. 
-
-
 
 %------------------------------------Technical Specification-----------------------------------------------------------------
 
@@ -197,6 +215,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 
 \subsection{Introduction to Augmented Reality }
 
+\iffalse
 \subsubsection{History of Augmented Reality}
 \par \textbf{1966} Invented Head-Mounted Display which was the first step in making AR a possibility.
 \par \textbf{1992}
@@ -204,13 +223,13 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \item Coined the term “Augmented Reality”.
 \item Developed Complex Software at Boeing  to help technicians assemble cables into aircraft.
 \end{itemize}
-
 \par \textbf{1999}
 \begin{itemize}
 \item In 1999, Hirokazu Kato of the Nara Institute of Science and Technology released the ARToolKit to the open source community.
 \item Although the smartphone was yet to be invented, it was what allowed a simple, handheld device with a camera and an internet connection to bring AR to the masses.
 \end{itemize}
 
+\fi
 
 \subsubsection{What is Augmented reality? }
 \par Augmented reality is the display of computer graphics and media, overlaid and registered on real-world environments, interactively in real time.{\small{In other words,}}
@@ -252,6 +271,8 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \item \textbf{Tracker: }  The tracker analyzes the live camera image and detects the targets stored in its associated target collection. Multiple trackers can be created, however only one tracker can be active for recognition at any given time. 
 \end{itemize}
 
+
+\iffalse
 \subsubsection{3D Models}
 \par Wikitude also helps to augment a target image with 3D content. It starts by displaying a 3D model on a target and advances by adding displayed animations and interactivity.
 \par 3D content within Wikitude can only be loaded from Wikitude 3D Format files (.wt3). This is a compressed binary format for describing 3D content which is optimized for fast loading and handling of 3D content on a mobile device. You still can use 3D models from your favourite 3D modelling tools (Autodesk® Maya® or Blender) but you'll need to convert them into the wt3 file format. The Wikitude 3D Encoder desktop application (Windows and Mac) encodes your 3D source file. The Encoder can handle Autodesk® FBX® files (.fbx) and the open standard Collada (.dae) file formats for encoding to .wt3. 
@@ -263,6 +284,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \item Interactivity
 \item Snap to Screen 
 \end{enumerate}
+\fi
 
 \subsubsection{POINT OF INTEREST (POI) }
 \par The Point Of Interest (POI) will show how you can create a marker that is placed at a specific geolocation. The example is split into four different parts that depend on each other. You will have a complete and reusable marker at the end of the series which has a title, description, a selected and an idle state which animates smoothly from one to another. 
@@ -292,8 +314,13 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \item Capture Screen Bonus 
 \end{enumerate}
 
+
+\iffalse
 \subsubsection{VIDEO DRAWABLES }
 \par Besides images, text and HTML content you are able to display videos in augmented reality using the Wikitude SDK. With the help of AR.VideoDrawables you can add a video on top of any target image (AR.Trackable2DObject) or have it displayed at any geo location (AR.GeoObject). Like any other drawable you can position, scale, rotate and change the opacity of the video drawable.\\[.4cm]
+\fi
+
+\iffalse
 \textbf{SUPPORTED VIDEO CODECS AND HOSTING SERVICES }
 \par To support all platforms make sure to use a H.264 encoded video with a maximum resolution of 720p (1280x720 pixel). 
 \par H.264 defines different profiles. Make sure that you are using either one of the following :
@@ -306,6 +333,9 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \par If the profile differs Android devices will most certainly misbehave (fail to play or crash entirely) when playing back those videos. 
 \par If you like to add a YouTube video, which is then played full-screen in the native player, rather use an AR.ImageDrawable showing a poster or play-button and add the URL to the YouTube video to the onClick trigger. Similar to what we do in the image recognition sample.\\[.4cm]
 \par \textbf{VIDEO SAMPLE }\\
+\fi
+
+
 \par This is the way to augment a target image. Furthermore it shows how to react on playback states and concludes with how to use transparent videos. 
 \par So it consists of four parts :
 \begin{enumerate}
@@ -357,6 +387,14 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \par The proposed system is an android application which detects the places around the entire campus using augmented reality algorithms. The live stream of video data i.e. set of continuous images is fetched to the system, system then identifies the markers in the images and displays the appropriate response back on the live screens. So basically it’s a real time detection of places and it displays back the stored information about that particular place/ markers. 
 \par The VirtualCampus app is just a simple single screened application which directly jumps on to your camera view and starts detecting the live frames.   
 
+
+
+\subsection{Overview }
+\par VirtualCampus is an android application that is been developed using Wikitude SDK. Wikitude is a mobile augmented reality software which is developed by the Austrian company Wikitude GmbH (formerly Mobilizy GmbH) and was first published in October 2008 as freeware. It displays information about the users' surroundings in a mobile camera view, including image recognition and 3d modeling. Wikitude was the first publicly available application that used a location-based approach to augmented reality. 
+
+
+
+
 \subsection{Harware Requirements}
 \par To work with project the following hardwares are required:
 \begin{itemize}
@@ -386,7 +424,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \par New Action and Data classes built in to shared libraries can be added to our framework by simply loading them during runtime. This makes the system extendable without rebuilding it and allows enhancements by adding more problem speciﬁc Actions while reusing the existing Actions for common processing steps. The system provides a type-factory where all available (linked) object are registered and can be instantiated by name. This comes in useful when reading conﬁgurations from a XML ﬁle or when composing new conﬁgurations with a graphical interface.   
 
 \subsection{Interfacing}
-par To use the system as a library in once own application, only the instantiation of the run-time instance is necessary. It provides access to all Actions and data in the system. By accessing the Actions, all parameters can be varied during run-time. Results or additional input data can be accessed through the global data-set where all data objects are stored. The run-time system also has a singleton which provides a static pointer to itself, which makes access from different  classes easier. The run-time instance provides some general purpose functions useful in any application like loading and saving of xml conﬁguration ﬁles, loading of extensions, and it deﬁnes abstract entry points for a graphical interface which allows separation of user interface and library. How this concept can be exploited to build certain types of applications, is outlined in the Application Framework section below. 
+\par To use the system as a library in once own application, only the instantiation of the run-time instance is necessary. It provides access to all Actions and data in the system. By accessing the Actions, all parameters can be varied during run-time. Results or additional input data can be accessed through the global data-set where all data objects are stored. The run-time system also has a singleton which provides a static pointer to itself, which makes access from different  classes easier. The run-time instance provides some general purpose functions useful in any application like loading and saving of xml conﬁguration ﬁles, loading of extensions, and it deﬁnes abstract entry points for a graphical interface which allows separation of user interface and library. How this concept can be exploited to build certain types of applications, is outlined in the Application Framework section below. 
 
 \subsection{Tracking Framework}
 \par In order to simplify the implementation of tracking algorithms and reuse as much code as possible, we deﬁne a tracking framework consisting of several base classes representing the major steps in tracking algorithms. We identiﬁed the following steps which are common to the most visual 3D tracking systems:
@@ -405,7 +443,7 @@ par To use the system as a library in once own application, only the instantiati
 	\caption{Flow Chart for a Simple AR System. }
 \end{figure}
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Simple AR.jpg}
+	\includegraphics[width=\linewidth]{SimpleAR.jpg}
 	\caption{Simple AR System Flow. }
 \end{figure}
 
@@ -454,34 +492,161 @@ WebView.setWebContentsDebuggingEnabled(true);\\
 	\caption{Code Snippet-Overlay Objects. }
 \end{figure}
 }
+
+
+
+
+
+
+
+
+
+
+
 %----------------Screenshots and Results-------------------------------------------------------------------------
 \pagebreak
 \newpage
+
 \section{Screenshots and Results}
-\subsection{Application Icon}
+
+\iffalse
+\begin{figure}[h]
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=.9\linewidth]{Icon.png}
+  	\caption{Application Icon}
+    \label{fig:1}
+  \end{subfigure}
+  %
+  \begin{subfigure}[b]{0.4\textwidth}
+  \includegraphics[scale=1,trim=0 50cm 0 0,clip=true]{AppEntryView.jpg}
+    \caption{Application Entry View}
+    \label{fig:2}
+  \end{subfigure}
+\end{figure}
+\fi
+
+
+%\iffalse
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{Icon.png}
+  \captionof{figure}{Application Icon}
+  \label{fig:icon}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.6\linewidth,height=5cm]{AppEntryView.jpg}
+  \captionof{figure}{Application Entry View}
+  \label{fig:appentry}
+\end{minipage}
+\end{figure}
+%\fi
+
+
+
+
+
+\iffalse
+%\subsection{Application Icon}
 \begin{center}
 \begin{figure}[h]
-	\includegraphics[scale=.2]{Icon.png}
+	\includegraphics[scale=.3]{Icon.png}
 	\caption{Application Icon. }
 \end{figure}
 \end{center}
 \vspace{5cm}
-\subsection{Application Entry View}
+%\subsection{Application Entry View}
 \begin{center}
 \begin{figure}[h]
-	\includegraphics[scale=0.2,trim=0 30cm 0 0,clip=true]{AppEntryView.jpg}
+	\includegraphics[scale=0.3,trim=0 30cm 0 0,clip=true]{AppEntryView.jpg}
 	\caption{Application Entry View. }
 \end{figure}
 \end{center}
-\subsection{College's Front View Recognition}
+%\subsection{College's Front View Recognition}
 \begin{figure}[h]
 	\includegraphics[scale=0.2,angle=90]{MainBuilding.jpg}
 	\caption{College's Front View Recognition . }
 \end{figure}
+\fi
 
+%\subsection{CCF View Recognition}
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{CCF.jpg}
+ 	 \captionof{figure}{CCF View Recognition . }
+  \label{fig:ccf}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{DirectorHome.jpg}
+	\captionof{figure}{ Director's HouseView Recognition . }
+  \label{fig:directorhome}
+\end{minipage}
+\end{figure}
+
+%\subsection{Director's House View Recognition}
+
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{GaneshTemple.jpg}
+	\captionof{figure}{ Ganesh Temple View Recognition . }
+  \label{fig:ccf}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{Globe.jpg}
+	\captionof{figure}{ Globe Recognition . }
+  \label{fig:globe}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{CSEDept.jpg}
+	\captionof{figure}{ CSE Department View Recognition . }
+  \label{fig:csedept}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{ITDept.jpg}
+	\captionof{figure}{ IT Department view Recognition . }
+  \label{fig:itdept}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{IT.jpg}
+	\captionof{figure}{ IT Department View Recognition . }
+  \label{fig:csedept}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+	\includegraphics[width=.4\linewidth,angle=90]{MiniCF.jpg}
+	\captionof{figure}{ Mini CF view Recognition . }
+  \label{fig:itdept}
+\end{minipage}
+\end{figure}
+
+
+\clearpage
+
+%\subsection{Ganesh Temple View Recognition}
 
 
 %------------------------------------Conclusion & Future Work-----------------------------------------------------------
+
 \newpage
 \section{Conclusion and Future Work}
 \subsection{Conclusion}
