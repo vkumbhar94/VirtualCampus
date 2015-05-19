@@ -167,7 +167,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 
 %-----------------------------------------------Introduction-----------------------------------------------------------------
 \newpage
-\normalsize
+\large
 \section{Introduction}
 \paragraph{ The field of Augmented Reality (AR) has existed for just over one decade, but the growth and progress in the past few years has been remarkable. }
 \subsection{Augmented Reality?}
@@ -213,7 +213,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 
 
 \subsubsection{What is Augmented reality? }
-\par Augmented reality is the display of computer graphics and media, overlaid and registered on real-world environments, interactively in real time.\small{In other words,}
+\par Augmented reality is the display of computer graphics and media, overlaid and registered on real-world environments, interactively in real time.{\small{In other words,}}
 \par Augmented reality (AR) is the act of enhancing reality with computer-generated content that, in this case, is activated by holding a “marker” in front of a webcam.
 
 \subsubsection{Uses of Augmented Reality}
@@ -357,7 +357,18 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \par The proposed system is an android application which detects the places around the entire campus using augmented reality algorithms. The live stream of video data i.e. set of continuous images is fetched to the system, system then identifies the markers in the images and displays the appropriate response back on the live screens. So basically it’s a real time detection of places and it displays back the stored information about that particular place/ markers. 
 \par The VirtualCampus app is just a simple single screened application which directly jumps on to your camera view and starts detecting the live frames.   
 
+\subsection{Harware Requirements}
+\par To work with project the following hardwares are required:
+\begin{itemize}
+\item Smart Phone with Android Operating System ,Camera, GPS.
+\end{itemize}
 
+\subsection{Software Requirements}
+\par List of Softwares needed:
+\begin{itemize}
+\item Android Studio.
+\item ADB Device Support Driver.
+\end{itemize}
 
 
 %----------------------------------SYSTEM DESIGN -----------------------------------------------------
@@ -386,13 +397,18 @@ par To use the system as a library in once own application, only the instantiati
 \item \textbf{Feature detection-} at this step higher level information such as interest points of an image are generated. This step is speciﬁc to a given tracking procedure. Examples are Harris - corner detector, edge detection, KLT - Kanade Lucas tracker - the feature detection part, SURF 
 \item \textbf{Tracking, matching or classiﬁcation-} The process of correspondence determination is very speciﬁc to a tracking procedure and can consists in searching features seen in the past images (tracking), comparison with reference data (matching) or feature sorting (classiﬁcation). Examples for tracking are KLT point tracking, line tracker, for matching features with references there is MSER and for classiﬁcation we have randomized trees.  
 \item \textbf{Pose estimation- } Computation of a camera pose with a given set of correspondences. Examples are generic pose calculation with Kalman Filter, RANSAC (linear or non linear estimation with inliers/outliers tests),POSIT, linear pose calculation: HEIV and nonlinear pose estimation (Levenberg-Marquardt). 
+\end{itemize}
 
 \subsection{Data Flow Diagram}
 \begin{figure}[h]
 	\includegraphics[width=\linewidth]{flowchart.jpg}
 	\caption{Flow Chart for a Simple AR System. }
 \end{figure}
-\end{itemize}
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{Simple AR.jpg}
+	\caption{Simple AR System Flow. }
+\end{figure}
+
 
 \subsection{ Output Design }
 \par Designing computer output should proceed in an organized, well throughout manner; the right output element is designed so that people will find the system whether or executed. When we design an output we must identify the specific output that is needed to meet the system. The usefulness of the new system is evaluated on the basis of their output. 
@@ -424,13 +440,56 @@ WebView.setWebContentsDebuggingEnabled(true);\\
 \par  Apart from planning major task of preparing the implementation are education and training of users. The implementation process begins with preparing a plan for the implementation of the system. According to this plan, the activities are to be carried out, discussions made regarding the equipment and resources and the additional equipment has to be acquired to implement the new system.
 \par  The most critical stage in achieving a successful new system is giving the users confidence that the new system will work and be effective. The system can be implemented only after thorough testing is done and if it is found to be working according to the specification. This method also offers the greatest security since the old system can take over if the errors are found or inability to handle certain type of transactions while using the new system.
 
-
-%------------------------------------Conclusion-----------------------------------------------------------
+\subsection{Recongnition}
+\par There is one object of \textbf{Trackable2D}.This object is used for the recognition.
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{Trackable2D.jpg}
+	\caption{Code Snippet-Trackable2D. }
+\end{figure}
+{\clearpage
+\subsection{Screen Overlay}
+\par These objects are used to add virtual world on  camera view.
+\begin{figure}[h]
+	\includegraphics[scale=.5]{ScreenOverlay.jpg}
+	\caption{Code Snippet-Overlay Objects. }
+\end{figure}
+}
+%----------------Screenshots and Results-------------------------------------------------------------------------
+\pagebreak
 \newpage
-\section{CONCLUSION}
+\section{Screenshots and Results}
+\subsection{Application Icon}
+\begin{center}
+\begin{figure}[h]
+	\includegraphics[scale=.2]{Icon.png}
+	\caption{Application Icon. }
+\end{figure}
+\end{center}
+\vspace{5cm}
+\subsection{Application Entry View}
+\begin{center}
+\begin{figure}[h]
+	\includegraphics[scale=0.2,trim=0 30cm 0 0,clip=true]{AppEntryView.jpg}
+	\caption{Application Entry View. }
+\end{figure}
+\end{center}
+\subsection{College's Front View Recognition}
+\begin{figure}[h]
+	\includegraphics[scale=0.2,angle=90]{MainBuilding.jpg}
+	\caption{College's Front View Recognition . }
+\end{figure}
+
+
+
+%------------------------------------Conclusion & Future Work-----------------------------------------------------------
+\newpage
+\section{Conclusion and Future Work}
+\subsection{Conclusion}
 \par To conclude the description about the project: The project, developed by Augmented reality SDK- WikiTude using Android for development platform is based on the idea that fascinates our entire team, To make use of the latest technological advancements in day to day life. The idea of embedding the real life scenarios to the virtual world is always the motive behind our project work. This application helps navigating and sharing information about the college campus and the places around it. 
 \par The application is a navigation aid to people walking outdoors.  These individuals could be students advancing upon their objective, faculties trying to gain information of the campus, or guests seeking directions to their intended destination.  Today, these individuals must pull out a physical map and associate what they see in the real environment around them with the markings on the 2–D map.  If landmarks are not easily identifiable, this association can be difficult to perform.  An AR system makes navigation easier by performing the association step automatically.  If the user's position and orientation are known, and the AR system has access to a digital map of the area, then the AR system can draw the map in 3-D directly upon the user's view.  The user looks at a nearby buildings and sees graphics directly overlaid on the real environment explaining the building’s name, what are the highlights of it, how far away it is, and List of faculties and students studying etc. 
 
+\subsection{Future Work}
+\par Now the space ovehead is on mobile's memory. So in future, We can extend this project with cloud recognition facility. Real time 3D recognition also possible.
 
 
 
