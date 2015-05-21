@@ -10,6 +10,33 @@
 \usepackage{cite}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{afterpage}
+\usepackage{natbib}
+
+\iffalse
+\usepackage[legalpaper]{geometry}
+	\geometry{ 
+	legalpaper,
+	total={210mm,297mm},
+	 left=30mm,
+	 right=25mm,
+	 top=20mm,
+	 bottom=20mm,
+	 }
+\fi
+
+
+
+
+
+%-------------------------------------
+\usepackage[paper=a4paper,top=1in,bottom=1in,right=1in,left=1.5in]{geometry}
+%------------------------give option showframe to draw frame around page--------------
+
+
+\addtocontents{lof}{\linespread{2}\selectfont}
+\addtocontents{toc}{\linespread{2}\selectfont}
+
 
 \newtcolorbox{stretchbox}[1][]{
   height fill,
@@ -18,8 +45,13 @@
   colframe=black!50!black,
   #1}
 
+
 \begin{document}
-	
+\linespread{1.6}
+
+
+%\afterpage
+\newgeometry{margin=1.5in}
 %------------------------------------TITLE PAGE------------------------------------------------------------------------------------------------
 \begin{titlepage}
 {
@@ -56,13 +88,15 @@
 }
 \end{titlepage}
 
+%\clearpage
+
 
 %-------------------------------------------CERTIFICATE-----------------------------------------------------------------------------
 \newpage
 %\begin{titlepage}
 %\begin{stretchbox}
 {	
-\linespread{1.6}
+\linespread{2}
 
 	\begin{center}
 		\includegraphics[width=.2\linewidth]{walchand.jpg}\\[.5cm]
@@ -71,10 +105,12 @@
 		 \textbf {\LARGE Department of Computer Science and Engineering}\\[1cm]
 		\huge \textbf{\textcolor{blue}{\underline{CERTIFICATE}}}\\[1cm]
 	\end{center}
+	\linespread{1.6}
 		\par \large This is to certify that the Third Year B.Tech. project entitled VirtualCampus: Prototyping 3D Mobile Augmented Reality Systems for Exploring the College campus using Android app is a bonafied work carried out by the student team- 
 	\textbf{ Mr. Vaibhav Anand Kumbhar}  , \textbf{ Mr. Machchindra Sanjay Pol } and \textbf{  Mr .Akshay Shirish Habbu }  - 
 in partial fulfillment of the completion of 5th semester B. Tech. course during the year 2012 – 2013. The project report has been approved as it satisfies the academic requirement with respect to the project work.\\[2cm]
-\vfill
+%\vfill
+\vspace{6cm}
 \begin{minipage}{.5\linewidth}
 	\begin{flushleft}
 		\textbf{Guide}\\
@@ -97,6 +133,7 @@ in partial fulfillment of the completion of 5th semester B. Tech. course during 
 
 %----------------------------------Contents--------------------------
 
+\restoregeometry
 
 
 
@@ -119,7 +156,8 @@ in partial fulfillment of the completion of 5th semester B. Tech. course during 
 \renewcommand\arraystretch{1.3}
 \renewcommand\tabcolsep{1cm}
 
-
+\begin{center}
+\renewcommand{\arraystretch}{2}
 \begin{tabular}{| l | l |}
 	\hline
 	Abbreviation & Meaning\\
@@ -132,11 +170,11 @@ in partial fulfillment of the completion of 5th semester B. Tech. course during 
 	ADE & ARchitect Desktop Engine\\
 	\hline
 \end{tabular}
+\end{center}
 
 
 
-
-
+\linespread{1.3}
 %-----------------------------------------------ACKNOWLEGEMENT
 \newpage
 \setlength{\parskip}{.2cm}
@@ -144,7 +182,7 @@ in partial fulfillment of the completion of 5th semester B. Tech. course during 
 \begin{center}
 {\LARGE \textbf{ ACKNOWLEGEMENT}}\\[1cm]
 \end{center}
-{\Large
+{\normalsize
 	\par We wish to take this opportunity to express our deep gratitude to all the people who have 
 extended their cooperation in various ways during my project work. It is our pleasure to acknowledge 
 the help of all those individuals. 
@@ -158,39 +196,39 @@ his continuous encouragement and valuable guidance in bringing shape to this dis
 his encouragement and support.  
 	\par In completing this project successfully all our faculty members have given an excellent 
 cooperation by guiding us in every aspect. We also thank our lab faculty and librarians.
-}\\[1cm]
-\vfill
-
-\begin{flushright}
+}\\[1cm]\par 
+%\vfill
+\vspace{3cm}
+\begin{center}
 \begin{minipage}{.5\linewidth}
 
-\begin{tabular}{rr}
+\begin{tabular}{lr}
 	\large Kumbhar Vaibhav A. &\large [2012BCS057]\\
 	\large Pol Machchindra  S. &\large [2012BCS091] \\
 	\large Habbu Akshay S. &\large [2012BCS095]\\
 \end{tabular}
 \end{minipage}
-\end{flushright}
+\end{center}
 
 
 
 
 %-----------------------------------------------ABSTRACT------------------------------------------------------------
 \newpage
-
+\linespread{1.6}
 \setlength{\parskip}{.5cm}
 %\section{Abstract}
 \begin{center}
 {\LARGE \textbf{ ABSTRACT}}\\[1cm]
 \end{center}
-\large
+\normalsize
 	\par Our College premises are rapidly developing with so many departments and so many laboratories with multi-disciplinary environment. For any student, teachers and staff members it will be great if all the related information regarding any infrastructure in the college is being shown on their smartphones. So our project is the same Android application which will display every single information related to the scene that being recorded by the users smartphone i.e. Names of every buildings, labs, departments, offices, open spaces, etc. 
 	\par We describe a project work that combines together the overlaid 3D graphics of augmented reality with the untethered freedom of mobile computing. The goal is to explore how these two technologies might together make possible portable android application that can support users in their everyday interactions with the world. We introduce an application that presents information about our college campus, using a mobile phone installed with our android application. We provide an illustrated explanation of how our project is used, and describe our rationale behind designing its software infrastructure.
 
 \normalsize 
 
 
-
+\linespread{1.3}
 %-----------------------------------------------Introduction-----------------------------------------------------------------
 \newpage
 \large
@@ -235,7 +273,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 
 \fi
 
-\subsubsection{What is Augmented reality? }
+\subsubsection{What is Augmented reality? }\cite{klein}
 \par Augmented reality is the display of computer graphics and media, overlaid and registered on real-world environments, interactively in real time.{\small{In other words,}}
 \par Augmented reality (AR) is the act of enhancing reality with computer-generated content that, in this case, is activated by holding a “marker” in front of a webcam.
 
@@ -253,7 +291,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \end{itemize}
 
 
-\subsection{ Features and Concepts of Wikitude: }
+\subsection{ Features and Concepts of Wikitude: }\cite{wikitude}
 
 \subsubsection{Image Recognition }
 \par Image recognition helps to recognize images in the viewfinder and overlay it with images. Furthermore it shows how to recognize multiple different images and how to react on user clicks on the overlaid elements. 
@@ -290,7 +328,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \end{enumerate}
 \fi
 
-\subsubsection{POINT OF INTEREST (POI) }
+\subsubsection{Point of Interest (POI) }
 \par The Point Of Interest (POI) will show how you can create a marker that is placed at a specific geolocation. The example is split into four different parts that depend on each other. You will have a complete and reusable marker at the end of the series which has a title, description, a selected and an idle state which animates smoothly from one to another. 
 \par Four flavours of POI:
 \begin{enumerate}
@@ -300,7 +338,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \item Selecting POIs
 \end{enumerate}
 
-\subsubsection{RETRIEVING POI DATA }
+\subsubsection{Retrieving POI Data}
 \par There are several ways to request and work with POI detail information in an ARchitect World. Depending on your application and use case, one might fit better than the other. 
 \par Retrieving data consists of three parts 
 \begin{enumerate}
@@ -349,11 +387,11 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 \item Transparent Video 
 \end{enumerate}
 
-\subsubsection{IMAGE RECOGNITION AND GEO }
+\subsubsection{Image Recognition and Geo}
 \par The Wikitude SDK allows you to combine location based augmented reality scenes with vision baed scenes to create a seamless experience for users. This tutorial will show you how to accomplish this and will provide you with additional advices. 
 
 \subsection{ Project Architecture }
-\subsubsection{DEVELOPMENT WORKFLOW }
+\subsubsection{Development Workflow}
 \par The following section describes a default development workflow for writing AR content using the ARchitect JavaScript API. It demonstrates the code test and debug cycle and provides useful tips for each step. \\
 \textbf{CODE, TEST, DEBUG :}
 
@@ -462,7 +500,7 @@ cooperation by guiding us in every aspect. We also thank our lab faculty and lib
 
 \newpage
 \section{SYSTEM TESTING }
-\subsection{ \textbf{ON-DEVICE DEBUGGING }}
+\subsection{ \textbf{ON-device Debugging }}
 \par Remote debugging is available for devices running Android.
 \par{ To enable remote debugging of a WebView add the following line to your CamActivity. }\\[.3cm]
 $if(Build.VERSION.SDK\_INT \geq 19) \{\\
@@ -667,15 +705,31 @@ WebView.setWebContentsDebuggingEnabled(true);\\
 
 \newpage
 %\label{Bibliography}
-%\bibliographystyle{plain} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
-%\bibliography{mybib.bib} 
+
+\nocite{*}
+
+
+%--------------------simple method of reference----------------
+\iffalse
+\begin{thebibliography}{}
+\bibitem{} Vaibhav ,sada,dfsdfsd,45,78.
+\end{thebibliography}
+\fi
+
+%-------------------with bibtex method--------------------------------
+
+\bibliographystyle{plainnat} % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{mybib}
+
+
+\iffalse
 {\centering \Large \textbf{REFERENCES}}\\[.5cm]
 \begin{enumerate}
 \item Visual Tracking for Augmented Reality -Georg Klein.
 \item Pro Android Augmented Reality  -Raghav Sood.
 \item Wikitude.com -Offcial Documentation and User Forum.
 \end{enumerate}
-
+\fi
 
 
 
